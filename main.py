@@ -1,11 +1,9 @@
 import cv2
 
 # HaarCascade Importing
-face_cascade = cv2.CascadeClassifier(
-    './HaarcascadeXMLs/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('./HaarcascadeXMLs/haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('./HaarcascadeXMLs/haarcascade_eye.xml')
-smile_cascade = cv2.CascadeClassifier(
-    './HaarcascadeXMLs/haarcascade_smile.xml')
+smile_cascade = cv2.CascadeClassifier('./HaarcascadeXMLs/haarcascade_smile.xml')
 
 
 def RealtimeCoverage():
@@ -28,15 +26,13 @@ def RealtimeCoverage():
         # Eyes Detection
         eyes = eye_cascade.detectMultiScale(roi_gray)
         for (ex, ey, ew, eh) in eyes:
-            cv2.rectangle(roi_color, (ex, ey),
-                          (ex+ew, ey+eh), (255, 235, 161), 2)
+            cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (255, 235, 161), 2)
 
         # Smile Detection
         smiles = smile_cascade.detectMultiScale(roi_gray, 1.8, 20)
         for (sx, sy, sw, sh) in smiles:
             font = cv2.FONT_HERSHEY_DUPLEX
-            img = cv2.putText(img, 'Smiling hehe', (70, 450),
-                              font, 2, (255, 255, 255), 3, cv2.LINE_AA)
+            img = cv2.putText(img, 'Smiling hehe', (70, 450), font, 2, (255, 255, 255), 3, cv2.LINE_AA)
 
         # Displaying the output
         cv2.imshow('Realtime Coverage', img)
@@ -79,7 +75,7 @@ while cont:
     elif my_choice == "2":
         readImg()
     elif my_choice == "3":
-        print("Exiting.....")
+        print("Exiting..........")
         break
     else:
-        print("Wrong Input")
+        print("Wrong Input.")
