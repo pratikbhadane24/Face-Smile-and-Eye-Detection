@@ -7,10 +7,9 @@ eye_cascade = cv2.CascadeClassifier('./HaarcascadeXMLs/haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier(
     './HaarcascadeXMLs/haarcascade_smile.xml')
 
-cap = cv2.VideoCapture(0)
-
 
 def RealtimeCoverage():
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     while True:
         # Reading Coverage
         ret, img = cap.read()
@@ -67,17 +66,20 @@ def readImg():
     # Displaying the output
     cv2.imshow('Local Image', img)
     cv2.waitKey()
+    cv2.destroyAllWindows()
 
 
-my_choice = input('''
-Select from 1 or 2:
-1. Realtime Coverage
-2. Local Image
-Your Choice: ''')
+cont = True
+while cont:
+    my_choice = input(
+        "Select from 1 or 2 or 3:\n1. Realtime Coverage\n2. Local Image\n3. Exit\nYour Choice: ")
 
-if my_choice == "1":
-    RealtimeCoverage()
-elif my_choice == "2":
-    readImg()
-else:
-    print("Wrong Input")
+    if my_choice == "1":
+        RealtimeCoverage()
+    elif my_choice == "2":
+        readImg()
+    elif my_choice == "3":
+        print("Exiting.....")
+        break
+    else:
+        print("Wrong Input")
