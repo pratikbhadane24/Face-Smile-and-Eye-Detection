@@ -1,6 +1,6 @@
 # Face--Smile-and-Eye-Detection-in-OpenCV
 
-## Menu Driven Python Program that can:
+## Menu Driven Python Program that can via OpenCV:
 
 Detect Realtime Face, Smile and Eyes
 
