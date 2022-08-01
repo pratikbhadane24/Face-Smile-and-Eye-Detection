@@ -6,5 +6,4 @@ Detect Realtime Face, Smile and Eyes
 
 Read Local Image and Detect Face and Eyes
 
-IP Implemented 
-
+Image Processing implemented successfully.
