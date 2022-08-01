@@ -7,6 +7,8 @@ smile_cascade = cv2.CascadeClassifier('./HaarcascadeXMLs/haarcascade_smile.xml')
 
 
 def RealtimeCoverage():
+    """Real time Coverage
+    """
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     while True:
         # Reading Coverage
@@ -45,6 +47,8 @@ def RealtimeCoverage():
 
 
 def readImg():
+    """Read the image in OpenCV.
+    """
     img = cv2.imread('pain.jpg')
     # Convert into grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
